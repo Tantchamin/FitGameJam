@@ -55,4 +55,15 @@ public class PoolObject : MonoBehaviour
             }
         }
     }
+    public bool SpawnStatus()
+    {
+        for(int i = 0;i<MAX_OBJECT_AMOUNT; i++)
+        {
+            if (gameObjectsPoollist[i].activeInHierarchy == true)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
