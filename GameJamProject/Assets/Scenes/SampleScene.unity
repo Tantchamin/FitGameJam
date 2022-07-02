@@ -1113,6 +1113,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+<<<<<<< Updated upstream
 --- !u!4 &519420032
 Transform:
   m_ObjectHideFlags: 0
@@ -1128,6 +1129,21 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ab80632b9ee624a80b91216eacbc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolObjectList:
+  - {fileID: 8162346047619535630, guid: 81dc1e63f2d7e5a4faf8e9be81aceb1a, type: 3}
+  - {fileID: 3083194778478885768, guid: ee2022f017bf94b4a875a11b3c5e5d9f, type: 3}
+  - {fileID: 9140251022593539512, guid: e6d00f07523ae644ab7949c3ff221162, type: 3}
+  - {fileID: 7976245579445221784, guid: 3b0ed1aeea6b72b4f9f6b4961f893201, type: 3}
+  - {fileID: 4982375259172743609, guid: fe45db83916d4f844ba1a7612149e549, type: 3}
+  - {fileID: 693212391888240466, guid: c2eabf5c981e1a849b357a1488865024, type: 3}
+  poolObject: {fileID: 830613391}
+--- !u!114 &830613391
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
