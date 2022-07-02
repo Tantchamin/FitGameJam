@@ -21,7 +21,7 @@ public class characterControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Vertical") && jumpCount < 2 && gameObject.CompareTag("Player1"))
+        /*if (Input.GetButtonDown("Vertical") && jumpCount < 2 && gameObject.CompareTag("Player1"))
         {
             jump();
         }
@@ -46,7 +46,7 @@ public class characterControl : MonoBehaviour
         {
             useItem2();
         }
-
+        */
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
