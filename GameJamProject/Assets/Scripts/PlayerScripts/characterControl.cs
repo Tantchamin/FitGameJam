@@ -7,19 +7,19 @@ public class characterControl : MonoBehaviour
     private int jumpCount = 0;
     private bool isSlide;
     private Rigidbody2D rigidbody;
-    public int jumpForce = 10;
+    public int jumpForce = 500;
     private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) && jumpCount < 2 && gameObject.CompareTag("Player1"))
+        if (Input.GetButtonDown("Vertical") && jumpCount < 2 && gameObject.CompareTag("Player1"))
         {
             jump();
         }
