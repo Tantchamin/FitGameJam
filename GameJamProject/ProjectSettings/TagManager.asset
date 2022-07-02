@@ -44,3 +44,6 @@ TagManager:
   - name: BG
     uniqueID: 4203768887
     locked: 0
+  - name: Tile
+    uniqueID: 973109717
+    locked: 0
