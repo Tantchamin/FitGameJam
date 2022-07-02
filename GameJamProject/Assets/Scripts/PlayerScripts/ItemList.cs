@@ -19,7 +19,7 @@ public class ItemList : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player1_Item.Count > 0 )
+        /*if (player1_Item.Count > 0 )
         {
             // Player 1 item UI
 
@@ -31,7 +31,17 @@ public class ItemList : MonoBehaviour
             // Player 2 item UI
 
             item2.sprite = player2_Item[0].gameObject.GetComponent<SpriteRenderer>().sprite;
-        }
+        }*/
+    }
+
+    public void changeImage_Item1()
+    {
+        item1.sprite = player1_Item[0].gameObject.GetComponent<SpriteRenderer>().sprite;
+    }
+
+    public void changeImage_Item2()
+    {
+        item2.sprite = player2_Item[0].gameObject.GetComponent<SpriteRenderer>().sprite;
     }
 
 }

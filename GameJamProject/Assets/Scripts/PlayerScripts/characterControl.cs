@@ -9,11 +9,13 @@ public class characterControl : MonoBehaviour
     private Rigidbody2D rigidbody;
     public int jumpForce = 500;
     private Animator anim;
+    private ItemList itemList;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        itemList = GameObject.FindGameObjectWithTag("ItemList").GetComponent<ItemList>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,11 @@ public class characterControl : MonoBehaviour
         {
             slide();
         }
+        if (Input.GetKeyDown(KeyCode.E) && isSlide == false && gameObject.CompareTag("Player1"))
+        {
+            useItem1();
+        }
+
         if (Input.GetKeyDown(KeyCode.O) && jumpCount < 2 && gameObject.CompareTag("Player2"))
         {
             jump();
@@ -34,6 +41,10 @@ public class characterControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L) && isSlide == false && gameObject.CompareTag("Player2"))
         {
             slide();
+        }
+        if (Input.GetKeyDown(KeyCode.P) && isSlide == false && gameObject.CompareTag("Player2"))
+        {
+            useItem2();
         }
 
     }
@@ -54,5 +65,37 @@ public class characterControl : MonoBehaviour
     void slide()
     {
 
+    }
+
+    void useItem1()
+    {
+        if(itemList.player1_Item[0].GetComponent<Item1>() != false)
+        {
+            itemList.player1_Item.RemoveAt(0);
+        }
+        else if (itemList.player1_Item[0].GetComponent<Item2>() != false)
+        {
+            itemList.player1_Item.RemoveAt(0);
+        }
+        else if (itemList.player1_Item[0].GetComponent<Item3>() != false)
+        {
+            itemList.player1_Item.RemoveAt(0);
+        }
+    }
+
+    void useItem2()
+    {
+        if (itemList.player2_Item[0].GetComponent<Item1>() != false)
+        {
+            itemList.player2_Item.RemoveAt(0);
+        }
+        else if (itemList.player2_Item[0].GetComponent<Item2>() != false)
+        {
+            itemList.player2_Item.RemoveAt(0);
+        }
+        else if (itemList.player2_Item[0].GetComponent<Item3>() != false)
+        {
+            itemList.player2_Item.RemoveAt(0);
+        }
     }
 }
