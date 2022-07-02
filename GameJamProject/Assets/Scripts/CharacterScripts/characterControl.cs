@@ -10,17 +10,21 @@ public class characterControl : MonoBehaviour
     public int jumpForce = 500;
     private Animator anim;
     private ItemList itemList;
+    private Collider2D collider;
 
-    public GameObject itemBangFai;
+    public GameObject itemBangFai, itemTukTuk;
     public GameObject spawnPoint;
 
     private bool isRun;
+
+    private EnvironmentHitPlayer environment;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         itemList = GameObject.FindGameObjectWithTag("ItemList").GetComponent<ItemList>();
+        environment = GetComponent<EnvironmentHitPlayer>();
         anim = GetComponent<Animator>();
     }
 
@@ -86,6 +90,10 @@ public class characterControl : MonoBehaviour
         else if (itemList.player1_Item[0].GetComponent<Item2>() != false)
         {
             itemList.player1_Item.RemoveAt(0);
+            Instantiate(itemTukTuk, transform.position, itemTukTuk.transform.rotation);
+            environment.enabled = false;
+            Invoke("enableEnvironment", 5.0f);
+
         }
         else if (itemList.player1_Item[0].GetComponent<Item3>() != false)
         {
@@ -99,14 +107,23 @@ public class characterControl : MonoBehaviour
         {
             itemList.player2_Item.RemoveAt(0);
             Instantiate(itemBangFai, spawnPoint.transform.position, itemBangFai.transform.rotation);
+
         }
         else if (itemList.player2_Item[0].GetComponent<Item2>() != false)
         {
             itemList.player2_Item.RemoveAt(0);
+            Instantiate(itemTukTuk, transform.position, itemTukTuk.transform.rotation);
+            environment.enabled = false;
+            Invoke("enableEnvironment", 5.0f);
         }
         else if (itemList.player2_Item[0].GetComponent<Item3>() != false)
         {
             itemList.player2_Item.RemoveAt(0);
         }
+    }
+
+    void enableEnvironment()
+    {
+        environment.enabled = false;
     }
 }
