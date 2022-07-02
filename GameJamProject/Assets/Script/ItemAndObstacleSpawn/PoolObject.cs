@@ -6,7 +6,7 @@ public class PoolObject : MonoBehaviour
 {
     private List <GameObject> gameObjectTypePoollist = new List <GameObject>();
     private List<GameObject> gameObjectsPoollist = new List<GameObject>();
-    private const int MAX_OBJECT_AMOUNT = 6;
+    private const int MAX_OBJECT_AMOUNT = 12;
     
     public void AddGameObjectTypeToPool( GameObject PoolingObject)
     {
