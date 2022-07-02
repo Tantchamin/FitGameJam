@@ -43,7 +43,7 @@ public class PatternPooling : MonoBehaviour
     }
     IEnumerator Stop()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(30f);
         objectInTime[0].transform.position = gameObject.transform.position;
         poolObject.DisableObjectInPool(objectInTime[0]);
         objectInTime.RemoveAt(0);
