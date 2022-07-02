@@ -11,6 +11,9 @@ public class characterControl : MonoBehaviour
     private Animator anim;
     private ItemList itemList;
 
+    public GameObject itemBangFai;
+    public GameObject spawnPoint;
+
     private bool isRun;
 
     // Start is called before the first frame update
@@ -78,6 +81,7 @@ public class characterControl : MonoBehaviour
         if(itemList.player1_Item[0].GetComponent<Item1>() != false)
         {
             itemList.player1_Item.RemoveAt(0);
+            Instantiate(itemBangFai, spawnPoint.transform.position, itemBangFai.transform.rotation);
         }
         else if (itemList.player1_Item[0].GetComponent<Item2>() != false)
         {
@@ -94,6 +98,7 @@ public class characterControl : MonoBehaviour
         if (itemList.player2_Item[0].GetComponent<Item1>() != false)
         {
             itemList.player2_Item.RemoveAt(0);
+            Instantiate(itemBangFai, spawnPoint.transform.position, itemBangFai.transform.rotation);
         }
         else if (itemList.player2_Item[0].GetComponent<Item2>() != false)
         {
