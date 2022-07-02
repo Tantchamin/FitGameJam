@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class characterControl : MonoBehaviour
 {
     private int jumpCount = 0;
-    private bool isSlide;
+    private bool isSlide = false;
     private Rigidbody2D rigidbody;
     public int jumpForce = 500;
     private Animator anim;
@@ -37,7 +37,7 @@ public class characterControl : MonoBehaviour
         {
             jump();
         }
-        if (StateValue <0 &&StateValue >= -1 && isSlide == false && gameObject.CompareTag("Player1"))
+        if (StateValue <-0.5 &&StateValue >= -1 && gameObject.CompareTag("Player1"))
         {
             slide();
         }
@@ -58,8 +58,12 @@ public class characterControl : MonoBehaviour
         {
             useItem2();
         }
-        
-        
+        else if (StateValue >-0.5 && StateValue <=0)
+        {
+            Run();
+        }
+
+        anim.SetBool("isRun", isRun);
     }
     public void UpAndDownControl(InputAction.CallbackContext context)
     {
@@ -69,11 +73,9 @@ public class characterControl : MonoBehaviour
     {
         usingItemValue = context.ReadValue<float>();
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+     void Run() { 
         jumpCount = 0;
         isRun = true;
-        anim.SetBool("isRun", isRun);
         
     }
 
@@ -87,6 +89,9 @@ public class characterControl : MonoBehaviour
 
     void slide()
     {
+        isRun = false;
+        isSlide = true;
+        anim.SetTrigger("isSlide");
 
     }
 
