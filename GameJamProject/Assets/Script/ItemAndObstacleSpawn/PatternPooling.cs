@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class PatternPooling : MonoBehaviour
 {
-    public List<GameObject> poolObject1 = new List<GameObject>();
-    public List<GameObject> poolObject2 = new List<GameObject>();
-    public List<GameObject> poolObject3 = new List<GameObject>();
-    private List<List<GameObject>> poolPattern = new List<List<GameObject>>();
-    private PatternPool PatternPool = new PatternPool();
+    public List<GameObject> poolObjectList = new List<GameObject>();
+    public PoolObject poolObject = new PoolObject();
 
     void Start()
     {
-        PatternPool.AddObjectToPattern(poolPattern,poolObject1);
-        PatternPool.AddObjectToPattern(poolPattern,poolObject2);
-        PatternPool.AddObjectToPattern(poolPattern,poolObject3);
+        for (int i = 0;i<poolObjectList.Count;i++)
+        {
+            poolObject.AddGameObjectTypeToPool(poolObjectList[i]);
+        }
+        poolObject.CreateGameObjectFromPool();
     }
 
 
     void Update()
+    {
+   
+    }
+    public void RandomObjectSpawner()
     {
         
     }
