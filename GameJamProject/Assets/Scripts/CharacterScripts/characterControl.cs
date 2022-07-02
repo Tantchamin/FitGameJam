@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class characterControl : MonoBehaviour
 {
     private int jumpCount = 0;
@@ -11,6 +11,8 @@ public class characterControl : MonoBehaviour
     private Animator anim;
     private ItemList itemList;
     private Collider2D collider;
+    private float StateValue;
+    private float usingItemValue;
 
     public GameObject itemBangFai, itemTukTuk;
     public GameObject spawnPoint;
@@ -31,34 +33,42 @@ public class characterControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetButtonDown("Vertical") && jumpCount < 2 && gameObject.CompareTag("Player1"))
+        if (StateValue <= 1 && StateValue>0 && jumpCount < 2 && gameObject.CompareTag("Player1"))
         {
             jump();
         }
-        if (Input.GetKeyDown(KeyCode.S) && isSlide == false && gameObject.CompareTag("Player1"))
+        if (StateValue <0 &&StateValue >= -1 && isSlide == false && gameObject.CompareTag("Player1"))
         {
             slide();
         }
-        if (Input.GetKeyDown(KeyCode.E) && isSlide == false && gameObject.CompareTag("Player1"))
+        if (usingItemValue != 0 && isSlide == false && gameObject.CompareTag("Player1"))
         {
             useItem1();
         }
 
-        if (Input.GetKeyDown(KeyCode.O) && jumpCount < 2 && gameObject.CompareTag("Player2"))
+        if (StateValue <= 1 && StateValue > 0 && jumpCount < 2 && gameObject.CompareTag("Player2"))
         {
             jump();
         }
-        if (Input.GetKeyDown(KeyCode.L) && isSlide == false && gameObject.CompareTag("Player2"))
+        if (StateValue < 0 && StateValue >= -1 && isSlide == false && gameObject.CompareTag("Player2"))
         {
             slide();
         }
-        if (Input.GetKeyDown(KeyCode.P) && isSlide == false && gameObject.CompareTag("Player2"))
+        if (usingItemValue != 0 && isSlide == false && gameObject.CompareTag("Player2"))
         {
             useItem2();
         }
-        */
+        
+        
     }
-
+    public void UpAndDownControl(InputAction.CallbackContext context)
+    {
+        StateValue = context.ReadValue<float>();
+    }
+    public void UsingItemControl(InputAction.CallbackContext context)
+    {
+        usingItemValue = context.ReadValue<float>();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         jumpCount = 0;
