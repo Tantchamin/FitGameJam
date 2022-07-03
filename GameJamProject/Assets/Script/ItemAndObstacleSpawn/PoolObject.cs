@@ -59,12 +59,16 @@ public class PoolObject : MonoBehaviour
     {
         for(int i = 0;i<MAX_OBJECT_AMOUNT; i++)
         {
-            if (gameObjectsPoollist[i].activeSelf == true)
+            if (gameObjectsPoollist[i].activeInHierarchy == true)
             {
-                return true;
+                
+            }
+            else
+            {
+                return false;
             }
         }
-        return false;
+        return true;
     }
     public bool SpawnStatusSelection(int numberObject)
     {
