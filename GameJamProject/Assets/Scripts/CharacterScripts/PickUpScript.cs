@@ -5,7 +5,7 @@ using UnityEngine;
 public class PickUpScript : MonoBehaviour
 {
     private ItemList itemList;
-    private int itemCount = 0;
+    public int itemCount = 0;
 
     // Start is called before the first frame update
     void Start()

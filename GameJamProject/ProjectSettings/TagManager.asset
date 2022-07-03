@@ -9,6 +9,8 @@ TagManager:
   - ItemList
   - Enemy
   - Item
+  - BangFai
+  - Banana
   layers:
   - Default
   - TransparentFX

@@ -21,7 +21,7 @@ public class characterControl : MonoBehaviour
 
     public bool OnGround;
     private bool isRun;
-
+    
     private EnvironmentHitPlayer environment;
     public BoxCollider2D collider2D;
 
@@ -29,6 +29,8 @@ public class characterControl : MonoBehaviour
     public Sprite tuktukform;
 
     public GameObject blank;
+
+    private PickUpScript pickupscript;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,8 @@ public class characterControl : MonoBehaviour
         collider2D = GetComponent<BoxCollider2D>();
         normalform = anim_Object.GetComponent<SpriteRenderer>();
         itemList = GameObject.FindGameObjectWithTag("ItemList").GetComponent<ItemList>();
+        pickupscript = gameObject.GetComponent<PickUpScript>();
+        anim.SetTrigger("isIdle");
     }
 
     // Update is called once per frame
@@ -114,8 +118,11 @@ public class characterControl : MonoBehaviour
         anim.SetTrigger("isSlide");
         collider2D.size = new Vector2(1.35f,0.35f);
         collider2D.offset = new Vector2(-0.2f, -0.15f);
-     
-
+    }
+    public void idle()
+    {
+        isRun = !isRun;
+        anim.SetTrigger("isIdle");
     }
 
     void useItem1()
@@ -123,14 +130,17 @@ public class characterControl : MonoBehaviour
         if(itemList.player1_Item[0].name == "BangFai")
         {
             itemList.player1_Item[0] = blank;
+            pickupscript.itemCount--;
             Instantiate(itemBangFai, spawnPoint_Front.transform.position, itemBangFai.transform.rotation);
+            
         
         }
         else if (itemList.player1_Item[0].name == "Tuktuk")
         {
             itemList.player1_Item[0] = blank;
+            pickupscript.itemCount--;
             anim.enabled = false;
-            environment.enabled = false;
+            environment.knockBackDistant = 0;
             Invoke("TranformToTukTuk", 0.1f);
             Invoke("enableEnvironment", 5.0f);
 
@@ -138,6 +148,7 @@ public class characterControl : MonoBehaviour
         else if (itemList.player1_Item[0].name == "banana")
         {
             itemList.player1_Item[0] = blank;
+            pickupscript.itemCount--;
             Instantiate(itemBanana, spawnPoint_Back.transform.position, itemBanana.transform.rotation);
         }
         else
@@ -151,6 +162,7 @@ public class characterControl : MonoBehaviour
         if (itemList.player2_Item[0].name == "BangFai")
         {
             itemList.player2_Item[0] = blank;
+            pickupscript.itemCount--;
             Instantiate(itemBangFai, spawnPoint_Front.transform.position, itemBangFai.transform.rotation);
 
         }
@@ -166,17 +178,20 @@ public class characterControl : MonoBehaviour
         else if (itemList.player2_Item[0].name == "banana")
         {
             itemList.player2_Item[0] = blank;
+            pickupscript.itemCount--;
             Instantiate(itemBanana, spawnPoint_Back.transform.position, itemBanana.transform.rotation);
         }
     }
 
     void enableEnvironment()
     {
-        environment.enabled = false;
+        environment.iFrame();
         anim.enabled = true;
     }
     void TranformToTukTuk()
     {
         normalform.sprite = tuktukform;
     }
+   
+    
 }
