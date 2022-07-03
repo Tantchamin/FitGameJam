@@ -3911,10 +3911,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da5ef42699a4e74fa5d156539bb6980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpCount: 0
   jumpForce: 500
   itemBangFai: {fileID: 8704319903053021561, guid: 3ce16ca46c7df2a49a143b247fc90cf0, type: 3}
   itemTukTuk: {fileID: 0}
   spawnPoint: {fileID: 1067560394}
+  OnGround: 0
 --- !u!114 &1122909920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4049,7 +4051,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
