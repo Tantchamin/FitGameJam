@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public float speed = 20.0f;
-    private Rigidbody2D rigidbody;
+ 
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,7 @@ public class BulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigidbody.velocity = transform.right * speed;
+        gameObject.transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

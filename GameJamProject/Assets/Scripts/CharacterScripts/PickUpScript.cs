@@ -26,14 +26,14 @@ public class PickUpScript : MonoBehaviour
         {
             if (gameObject.CompareTag("Player1") && itemCount < 1)
             {
-                itemList.player1_Item.Add(collision.gameObject);
+                itemList.player1_Item[0] = collision.gameObject;
                 itemCount++;
                 itemList.changeImage_Item1();
                 collision.gameObject.SetActive(false);
             }
             else if (gameObject.CompareTag("Player2") && itemCount < 1)
             {
-                itemList.player2_Item.Add(collision.gameObject);
+                itemList.player2_Item[0] = collision.gameObject;
                 itemCount++;
                 itemList.changeImage_Item2();
                 collision.gameObject.SetActive(false);

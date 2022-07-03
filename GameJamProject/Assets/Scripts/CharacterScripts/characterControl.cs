@@ -9,26 +9,36 @@ public class characterControl : MonoBehaviour
     private Rigidbody2D rigidbody;
     public int jumpForce = 500;
     private Animator anim;
+    public GameObject anim_Object;
     private ItemList itemList;
     private Collider2D collider;
     private float StateValue;
     private float usingItemValue;
 
-    public GameObject itemBangFai, itemTukTuk;
-    public GameObject spawnPoint;
+    public GameObject itemBangFai, itemTukTuk,itemBanana;
+    public GameObject spawnPoint_Front;
+    public GameObject spawnPoint_Back;
 
     public bool OnGround;
     private bool isRun;
 
     private EnvironmentHitPlayer environment;
+    public BoxCollider2D collider2D;
 
+    public SpriteRenderer normalform;
+    public Sprite tuktukform;
+
+    public GameObject blank;
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        itemList = GameObject.FindGameObjectWithTag("ItemList").GetComponent<ItemList>();
+        
         environment = GetComponent<EnvironmentHitPlayer>();
-        anim = GetComponent<Animator>();
+        anim =anim_Object.GetComponent<Animator>();
+        collider2D = GetComponent<BoxCollider2D>();
+        normalform = anim_Object.GetComponent<SpriteRenderer>();
+        itemList = GameObject.FindGameObjectWithTag("ItemList").GetComponent<ItemList>();
     }
 
     // Update is called once per frame
@@ -42,7 +52,7 @@ public class characterControl : MonoBehaviour
         {
             slide();
         }
-        if (usingItemValue != 0 && isSlide == false && gameObject.CompareTag("Player1"))
+        if (usingItemValue != 0 &&  gameObject.CompareTag("Player1"))
         {
             useItem1();
         }
@@ -55,7 +65,7 @@ public class characterControl : MonoBehaviour
         {
             slide();
         }
-        if (usingItemValue != 0 && isSlide == false && gameObject.CompareTag("Player2"))
+        if (usingItemValue != 0  && gameObject.CompareTag("Player2"))
         {
             useItem2();
         }
@@ -78,7 +88,10 @@ public class characterControl : MonoBehaviour
      void Run() { 
         jumpCount = 0;
         isRun = true;
-        
+        collider2D.size = new Vector2(0.35f, 1.35f);
+        collider2D.offset = new Vector2(-0.2f, 0f);
+       
+
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -99,53 +112,71 @@ public class characterControl : MonoBehaviour
         isRun = false;
         isSlide = true;
         anim.SetTrigger("isSlide");
+        collider2D.size = new Vector2(1.35f,0.35f);
+        collider2D.offset = new Vector2(-0.2f, -0.15f);
+     
 
     }
 
     void useItem1()
     {
-        if(itemList.player1_Item[0].GetComponent<Item1>() != false)
+        if(itemList.player1_Item[0].name == "BangFai")
         {
-            itemList.player1_Item.RemoveAt(0);
-            Instantiate(itemBangFai, spawnPoint.transform.position, itemBangFai.transform.rotation);
+            itemList.player1_Item[0] = blank;
+            Instantiate(itemBangFai, spawnPoint_Front.transform.position, itemBangFai.transform.rotation);
+        
         }
-        else if (itemList.player1_Item[0].GetComponent<Item2>() != false)
+        else if (itemList.player1_Item[0].name == "Tuktuk")
         {
-            itemList.player1_Item.RemoveAt(0);
-            Instantiate(itemTukTuk, transform.position, itemTukTuk.transform.rotation);
+            itemList.player1_Item[0] = blank;
+            anim.enabled = false;
             environment.enabled = false;
+            Invoke("TranformToTukTuk", 0.1f);
             Invoke("enableEnvironment", 5.0f);
 
         }
-        else if (itemList.player1_Item[0].GetComponent<Item3>() != false)
+        else if (itemList.player1_Item[0].name == "banana")
         {
-            itemList.player1_Item.RemoveAt(0);
+            itemList.player1_Item[0] = blank;
+            Instantiate(itemBanana, spawnPoint_Back.transform.position, itemBanana.transform.rotation);
+        }
+        else
+        {
+            Debug.Log("Error");
         }
     }
 
     void useItem2()
     {
-        if (itemList.player2_Item[0].GetComponent<Item1>() != false)
+        if (itemList.player2_Item[0].name == "BangFai")
         {
-            itemList.player2_Item.RemoveAt(0);
-            Instantiate(itemBangFai, spawnPoint.transform.position, itemBangFai.transform.rotation);
+            itemList.player2_Item[0] = blank;
+            Instantiate(itemBangFai, spawnPoint_Front.transform.position, itemBangFai.transform.rotation);
 
         }
-        else if (itemList.player2_Item[0].GetComponent<Item2>() != false)
+        else if (itemList.player2_Item[0].name == "Tuktuk")
         {
-            itemList.player2_Item.RemoveAt(0);
-            Instantiate(itemTukTuk, transform.position, itemTukTuk.transform.rotation);
+            itemList.player2_Item[0] = blank;
+            anim.enabled = false;
             environment.enabled = false;
+            Invoke("TranformToTukTuk", 0.1f);
             Invoke("enableEnvironment", 5.0f);
+
         }
-        else if (itemList.player2_Item[0].GetComponent<Item3>() != false)
+        else if (itemList.player2_Item[0].name == "banana")
         {
-            itemList.player2_Item.RemoveAt(0);
+            itemList.player2_Item[0] = blank;
+            Instantiate(itemBanana, spawnPoint_Back.transform.position, itemBanana.transform.rotation);
         }
     }
 
     void enableEnvironment()
     {
         environment.enabled = false;
+        anim.enabled = true;
+    }
+    void TranformToTukTuk()
+    {
+        normalform.sprite = tuktukform;
     }
 }

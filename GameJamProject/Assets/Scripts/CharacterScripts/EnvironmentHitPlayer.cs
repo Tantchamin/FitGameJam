@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnvironmentHitPlayer : MonoBehaviour
 {
-    public float knockBackDistant = -10.0f;
+    public float knockBackDistant = -5.0f;
     // Start is called before the first frame update
     void Start()
     {
