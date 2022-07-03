@@ -9,6 +9,8 @@ public class OpenInformation : MonoBehaviour
     private ItemInfo itemInformation;
     public Text itemName;
     public Text itemInfo;
+    public Text itemInfo2;
+    public Text itemInfo3;
     public Image itemImage;
 
     private void Start()
@@ -22,6 +24,8 @@ public class OpenInformation : MonoBehaviour
     {
         itemName.text = itemInformation.name;
         itemInfo.text = itemInformation.info;
+        itemInfo2.text = itemInformation.info2;
+        itemInfo3.text = itemInformation.info3;
         itemImage.sprite = itemInformation.image;
         information.SetActive(true);
     }

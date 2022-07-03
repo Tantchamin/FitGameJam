@@ -350,7 +350,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 32}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216199075
@@ -498,6 +498,85 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &447185481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 447185482}
+  - component: {fileID: 447185484}
+  - component: {fileID: 447185483}
+  m_Layer: 5
+  m_Name: ItemText (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &447185482
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447185481}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1310779228}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &447185483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447185481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 18
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &447185484
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447185481}
+  m_CullTransparentMesh: 1
 --- !u!1 &491665840
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +851,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Banana2
   info: Bananana2
+  info2: _
+  info3: _
   image: {fileID: 21300000, guid: c781b45221abeda47beb8b9cc476c4b7, type: 3}
 --- !u!114 &504392358
 MonoBehaviour:
@@ -788,6 +869,8 @@ MonoBehaviour:
   information: {fileID: 2037618970}
   itemName: {fileID: 1594877555}
   itemInfo: {fileID: 216199075}
+  itemInfo2: {fileID: 447185483}
+  itemInfo3: {fileID: 607806604}
   itemImage: {fileID: 1044575156}
 --- !u!114 &504392359
 MonoBehaviour:
@@ -1075,6 +1158,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &607806602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 607806603}
+  - component: {fileID: 607806605}
+  - component: {fileID: 607806604}
+  m_Layer: 5
+  m_Name: ItemText (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &607806603
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607806602}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1310779228}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -32}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &607806604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607806602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 18
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &607806605
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607806602}
+  m_CullTransparentMesh: 1
 --- !u!1 &651355682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,6 +1606,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Banana4
   info: Bananana4
+  info2: _
+  info3: _
   image: {fileID: 21300000, guid: c781b45221abeda47beb8b9cc476c4b7, type: 3}
 --- !u!114 &666052367
 MonoBehaviour:
@@ -1460,6 +1624,8 @@ MonoBehaviour:
   information: {fileID: 2037618970}
   itemName: {fileID: 1594877555}
   itemInfo: {fileID: 216199075}
+  itemInfo2: {fileID: 447185483}
+  itemInfo3: {fileID: 607806604}
   itemImage: {fileID: 1044575156}
 --- !u!114 &666052368
 MonoBehaviour:
@@ -1765,6 +1931,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Banana3
   info: Bananana3
+  info2: _
+  info3: _
   image: {fileID: 21300000, guid: c781b45221abeda47beb8b9cc476c4b7, type: 3}
 --- !u!114 &812839120
 MonoBehaviour:
@@ -1781,6 +1949,8 @@ MonoBehaviour:
   information: {fileID: 2037618970}
   itemName: {fileID: 1594877555}
   itemInfo: {fileID: 216199075}
+  itemInfo2: {fileID: 447185483}
+  itemInfo3: {fileID: 607806604}
   itemImage: {fileID: 1044575156}
 --- !u!114 &812839121
 MonoBehaviour:
@@ -2251,6 +2421,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Banana6
   info: Bananana6
+  info2: _
+  info3: _
   image: {fileID: 21300000, guid: c781b45221abeda47beb8b9cc476c4b7, type: 3}
 --- !u!114 &1235563937
 MonoBehaviour:
@@ -2267,6 +2439,8 @@ MonoBehaviour:
   information: {fileID: 2037618970}
   itemName: {fileID: 1594877555}
   itemInfo: {fileID: 216199075}
+  itemInfo2: {fileID: 447185483}
+  itemInfo3: {fileID: 607806604}
   itemImage: {fileID: 1044575156}
 --- !u!114 &1235563938
 MonoBehaviour:
@@ -2392,13 +2566,15 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 216199074}
+  - {fileID: 447185482}
+  - {fileID: 607806603}
   m_Father: {fileID: 2037618971}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -150}
-  m_SizeDelta: {x: 600, y: 120}
+  m_SizeDelta: {x: 750, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1310779229
 MonoBehaviour:
@@ -2767,6 +2943,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Banana5
   info: Bananana5
+  info2: _
+  info3: _
   image: {fileID: 21300000, guid: c781b45221abeda47beb8b9cc476c4b7, type: 3}
 --- !u!114 &1836068085
 MonoBehaviour:
@@ -2783,6 +2961,8 @@ MonoBehaviour:
   information: {fileID: 2037618970}
   itemName: {fileID: 1594877555}
   itemInfo: {fileID: 216199075}
+  itemInfo2: {fileID: 447185483}
+  itemInfo3: {fileID: 607806604}
   itemImage: {fileID: 1044575156}
 --- !u!114 &1836068086
 MonoBehaviour:
@@ -2994,7 +3174,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c781b45221abeda47beb8b9cc476c4b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 26095cbdcef3c3e43ace020303bf5c67, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3024,9 +3204,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657a557a10cebda49871f7e143eeeff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Banana
-  info: Bananana
-  image: {fileID: 21300000, guid: c781b45221abeda47beb8b9cc476c4b7, type: 3}
+  name: "\u0E1A\u0E38\u0E0D\u0E1A\u0E31\u0E49\u0E07\u0E44\u0E1F\u0E40\u0E14\u0E37\u0E2D\u0E19\u0E2B\u0E01
+    : \u0E23\u0E49\u0E2D\u0E22\u0E40\u0E2D\u0E47\u0E14"
+  info: " \"\u0E1B\u0E23\u0E30\u0E40\u0E1E\u0E13\u0E35 \u0E1A\u0E38\u0E0D\u0E1A\u0E31\u0E49\u0E07\u0E44\u0E1F\"
+    \u0E40\u0E1B\u0E47\u0E19\u0E1B\u0E23\u0E30\u0E40\u0E1E\u0E13\u0E35\u0E02\u0E2D\u0E07\u0E20\u0E32\u0E04\u0E2D\u0E35\u0E2A\u0E32\u0E19\u0E17\u0E35\u0E48\u0E1B\u0E0F\u0E34\u0E1A\u0E31\u0E15\u0E34\u0E2A\u0E37\u0E1A\u0E17\u0E2D\u0E14\u0E01\u0E31\u0E19\u0E21\u0E32\u0E15\u0E31\u0E49\u0E07\u0E41\u0E15\u0E48\u0E42\u0E1A\u0E23\u0E32\u0E13"
+  info2: "\u0E17\u0E33\u0E01\u0E31\u0E19\u0E43\u0E19\u0E40\u0E14\u0E37\u0E2D\u0E19
+    \u0E56 \u0E0A\u0E48\u0E27\u0E07\u0E40\u0E02\u0E49\u0E32\u0E2A\u0E39\u0E48\u0E24\u0E14\u0E39\u0E1D\u0E19\u0E0B\u0E36\u0E48\u0E07\u0E40\u0E1B\u0E47\u0E19\u0E24\u0E14\u0E39\u0E17\u0E33\u0E19\u0E32
+    \u0E08\u0E30\u0E21\u0E35\u0E01\u0E32\u0E23\u0E08\u0E38\u0E14\u0E1A\u0E31\u0E49\u0E07\u0E44\u0E1F\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E1A\u0E39\u0E0A\u0E32\u0E40\u0E17\u0E1E\u0E22\u0E14\u0E32
+    \u0E41\u0E25\u0E30\u0E2A\u0E34\u0E48\u0E07\u0E28\u0E31\u0E01\u0E14\u0E34\u0E4C\u0E2A\u0E34\u0E17\u0E18\u0E34\u0E4C\u0E17\u0E31\u0E49\u0E07\u0E2B\u0E25\u0E32\u0E22"
+  info3: "\u0E17\u0E35\u0E48\u0E0A\u0E32\u0E27\u0E2D\u0E35\u0E2A\u0E32\u0E19\u0E40\u0E23\u0E35\u0E22\u0E01\u0E01\u0E31\u0E19\u0E27\u0E48\u0E32
+    \u0E1E\u0E0D\u0E32\u0E41\u0E16\u0E19 \u0E2B\u0E23\u0E37\u0E2D \u0E40\u0E17\u0E1E\u0E27\u0E31\u0E2A\u0E2A\u0E01\u0E32\u0E25\u0E40\u0E17\u0E1E\u0E1A\u0E38\u0E15\u0E23
+    \u0E0B\u0E36\u0E48\u0E07\u0E21\u0E35\u0E04\u0E27\u0E32\u0E21\u0E40\u0E0A\u0E37\u0E48\u0E2D\u0E27\u0E48\u0E32
+    \u0E17\u0E33\u0E43\u0E2B\u0E49\u0E1E\u0E37\u0E0A\u0E1E\u0E31\u0E19\u0E18\u0E38\u0E4C\u0E18\u0E31\u0E0D\u0E0D\u0E32\u0E2B\u0E32\u0E23\u0E2D\u0E38\u0E14\u0E21\u0E2A\u0E21\u0E1A\u0E39\u0E23\u0E13\u0E4C"
+  image: {fileID: 21300000, guid: 26095cbdcef3c3e43ace020303bf5c67, type: 3}
 --- !u!114 &2007716869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3042,6 +3232,8 @@ MonoBehaviour:
   information: {fileID: 2037618970}
   itemName: {fileID: 1594877555}
   itemInfo: {fileID: 216199075}
+  itemInfo2: {fileID: 447185483}
+  itemInfo3: {fileID: 607806604}
   itemImage: {fileID: 1044575156}
 --- !u!1 &2037618970
 GameObject:
@@ -3058,7 +3250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2037618971
 RectTransform:
   m_ObjectHideFlags: 0
