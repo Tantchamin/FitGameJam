@@ -1458,7 +1458,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 654860236}
         m_TargetAssemblyTypeName: SceneManagementScript, Assembly-CSharp
-        m_MethodName: ExitGame
+        m_MethodName: TitleScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2525,7 +2525,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c781b45221abeda47beb8b9cc476c4b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d03adfce057be54f98702942ab3fe23, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
