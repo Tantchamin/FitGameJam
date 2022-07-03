@@ -30,6 +30,11 @@ public class SceneManagementScript : MonoBehaviour
         SceneManager.LoadScene(4);
     }
 
+    public void TutorialScene()
+    {
+        SceneManager.LoadScene(5);
+    }
+
     public void ExitGame()
     {
         Application.Quit();
