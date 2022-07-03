@@ -33,7 +33,7 @@ public class PatternPooling : MonoBehaviour
     
     IEnumerator SpawnFrequency()
     {
-        for (int i = 0;i<3;i++)
+        for (int i = 0;i<5;i++)
         {
             RandomObjectSpawner();
             yield return new WaitForSeconds(3f);
