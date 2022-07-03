@@ -11,6 +11,10 @@ TagManager:
   - Item
   - BangFai
   - Banana
+  - Artifact
+  - BG
+  - PoolList
+  - tile
   layers:
   - Default
   - TransparentFX

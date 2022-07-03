@@ -61,6 +61,11 @@ public class EnvironmentHitPlayer : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
         }
+        if (collision.CompareTag("Artifact"))
+        {
+            collision.gameObject.SetActive(false);
+            WLcontroller.GetComponent<WinOrLose>().Win(gameObject);
+        }
     }
     public void iFrame()
     {
