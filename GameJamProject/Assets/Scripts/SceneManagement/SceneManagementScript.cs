@@ -20,9 +20,14 @@ public class SceneManagementScript : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
-    public void CreditScene()
+    public void GalleryScene()
     {
         SceneManager.LoadScene(3);
+    }
+
+    public void CreditScene()
+    {
+        SceneManager.LoadScene(4);
     }
 
     public void ExitGame()
